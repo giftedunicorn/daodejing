@@ -71,15 +71,15 @@ The repo also includes reference documents:
 
 ```bash
 pnpm install
-cp .env.example .env.local
+cp .env.example .env
 ```
 
-Set `OPENAI_API_KEY` in `.env.local`.
+Set `DEEPSEEK_API_KEY` in `.env`.
 
 Optional:
 
 ```bash
-OPENAI_MODEL=gpt-4.1-mini
+DEEPSEEK_MODEL=deepseek-v4-flash
 ```
 
 Run locally:
@@ -104,8 +104,8 @@ pnpm build
 
 1. Create a Railway project from this GitHub repo.
 2. Add environment variables:
-   - `OPENAI_API_KEY`
-   - `OPENAI_MODEL` optional, defaults to `gpt-4.1-mini`
+   - `DEEPSEEK_API_KEY`
+   - `DEEPSEEK_MODEL` optional, defaults to `deepseek-v4-flash`
 3. Railway uses `railway.json`:
    - Build: `pnpm install --frozen-lockfile && pnpm build`
    - Start: `pnpm start`

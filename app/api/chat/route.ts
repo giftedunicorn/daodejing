@@ -1,4 +1,4 @@
-import { openai } from "@ai-sdk/openai";
+import { createOpenAI } from "@ai-sdk/openai";
 import { streamText } from "ai";
 
 import { founderCompassSystemPrompt } from "@/lib/prompts/founder-compass";
@@ -13,22 +13,28 @@ type ChatRequestBody = {
 };
 
 export async function POST(request: Request): Promise<Response> {
-  if (!process.env.OPENAI_API_KEY) {
+  if (!process.env.DEEPSEEK_API_KEY) {
     return Response.json(
-      { error: "OPENAI_API_KEY is not configured." },
+      { error: "DEEPSEEK_API_KEY is not configured." },
       { status: 500 },
     );
   }
 
   const body = (await request.json()) as ChatRequestBody;
   const messages = body.messages ?? [];
+  const deepseek = createOpenAI({
+    apiKey: process.env.DEEPSEEK_API_KEY,
+    baseURL: "https://api.deepseek.com",
+    compatibility: "compatible",
+    name: "deepseek",
+  });
 
   try {
-  const result = streamText({
-    model: openai(process.env.OPENAI_MODEL ?? "gpt-4.1-mini"),
-    system: founderCompassSystemPrompt,
-    messages,
-  });
+    const result = streamText({
+      model: deepseek(process.env.DEEPSEEK_MODEL ?? "deepseek-v4-flash"),
+      system: founderCompassSystemPrompt,
+      messages,
+    });
 
     return result.toDataStreamResponse();
   } catch (error) {
