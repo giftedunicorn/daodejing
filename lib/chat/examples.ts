@@ -5,19 +5,19 @@ export type StarterPrompt = {
 
 export const starterPrompts: StarterPrompt[] = [
   {
-    title: "PMF 卡住",
-    prompt: "我的 AI 产品一直没有 PMF，应该砍还是继续？",
+    title: "PMF Stuck",
+    prompt: "My AI product still does not have PMF. Should I keep going, pivot, or kill it?",
   },
   {
-    title: "MVP 取舍",
-    prompt: "我现在做 MVP，哪些功能该忍住不做？哪些必须做？",
+    title: "MVP Scope",
+    prompt: "I am building an MVP. Which features should I resist building, and which risks must I test?",
   },
   {
-    title: "流量焦虑",
-    prompt: "增长卡住了，我分不清是流量问题、定位问题，还是产品价值不够。",
+    title: "Distribution Anxiety",
+    prompt: "Growth is stuck. I cannot tell if the problem is traffic, positioning, conversion, or weak product value.",
   },
   {
-    title: "竞争和融资",
-    prompt: "竞品融资很快，我被带乱了。怎么判断自己的节奏和战场？",
+    title: "Competition And Fundraising",
+    prompt: "A competitor is raising fast and it is distorting my judgment. How should I choose my pace and battlefield?",
   },
 ];

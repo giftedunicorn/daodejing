@@ -27,7 +27,7 @@ export function ChatComposer({
       onSubmit={onSubmit}
     >
       <label className="sr-only" htmlFor="message">
-        输入创业问题
+        Enter a founder question
       </label>
       <textarea
         className="max-h-40 min-h-12 flex-1 resize-none bg-transparent px-2 py-3 text-sm leading-6 text-stone-950 outline-none placeholder:text-stone-400 dark:text-zinc-50 dark:placeholder:text-zinc-600"
@@ -39,13 +39,13 @@ export function ChatComposer({
             event.currentTarget.form?.requestSubmit();
           }
         }}
-        placeholder="说出你的创业困惑..."
+        placeholder="Ask a real founder problem..."
         rows={1}
         value={input}
       />
       {isLoading ? (
         <button
-          aria-label="停止生成"
+          aria-label="Stop generation"
           className="flex h-11 w-11 shrink-0 items-center justify-center rounded-2xl border border-stone-200 text-stone-700 transition hover:bg-stone-100 active:scale-95 dark:border-zinc-800 dark:text-zinc-200 dark:hover:bg-zinc-900"
           onClick={onStop}
           type="button"
@@ -54,7 +54,7 @@ export function ChatComposer({
         </button>
       ) : (
         <button
-          aria-label="发送"
+          aria-label="Send"
           className="flex h-11 w-11 shrink-0 items-center justify-center rounded-2xl bg-stone-950 text-white transition hover:bg-stone-800 active:scale-95 disabled:cursor-not-allowed disabled:bg-stone-300 disabled:text-stone-500 dark:bg-zinc-100 dark:text-zinc-950 dark:hover:bg-zinc-300 dark:disabled:bg-zinc-800 dark:disabled:text-zinc-500"
           disabled={!canSubmit}
           type="submit"

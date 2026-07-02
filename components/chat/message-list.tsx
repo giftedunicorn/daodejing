@@ -12,7 +12,7 @@ export function MessageList({ messages, isLoading }: MessageListProps) {
     return (
       <div className="mx-auto flex max-w-3xl flex-1 flex-col justify-center py-10">
         <p className="text-sm font-medium text-stone-500 dark:text-zinc-500">
-          先把问题说具体。越具体，越能判断是产品、流量、PMF、融资叙事，还是创始人状态出了问题。
+          Start with a specific problem. The sharper the situation, the easier it is to see whether the issue is product, distribution, PMF, fundraising narrative, or founder state.
         </p>
       </div>
     );
@@ -35,7 +35,7 @@ export function MessageList({ messages, isLoading }: MessageListProps) {
       {isLoading ? (
         <div className="mr-auto flex max-w-[92%] items-center gap-2 rounded-3xl border border-stone-200 bg-white px-5 py-4 text-sm text-stone-500 shadow-sm dark:border-zinc-800 dark:bg-zinc-950 dark:text-zinc-400">
           <span className="h-2 w-2 animate-pulse rounded-full bg-stone-500 dark:bg-zinc-400" />
-          正在拆解问题...
+          Reading the structure of the problem...
         </div>
       ) : null}
     </div>

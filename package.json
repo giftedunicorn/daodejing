@@ -1,6 +1,7 @@
 {
   "name": "daodejing-startup-chat",
   "version": "0.1.0",
+  "description": "A founder compass that uses the Dao De Jing and Taoist philosophy for modern AI startup judgment.",
   "private": true,
   "scripts": {
     "dev": "next dev",

@@ -1,7 +1,7 @@
 import { openai } from "@ai-sdk/openai";
 import { streamText } from "ai";
 
-import { startupXinfaSystemPrompt } from "@/lib/prompts/startup-xinfa";
+import { founderCompassSystemPrompt } from "@/lib/prompts/founder-compass";
 
 export const runtime = "nodejs";
 
@@ -24,11 +24,11 @@ export async function POST(request: Request): Promise<Response> {
   const messages = body.messages ?? [];
 
   try {
-    const result = streamText({
-      model: openai(process.env.OPENAI_MODEL ?? "gpt-4.1-mini"),
-      system: startupXinfaSystemPrompt,
-      messages,
-    });
+  const result = streamText({
+    model: openai(process.env.OPENAI_MODEL ?? "gpt-4.1-mini"),
+    system: founderCompassSystemPrompt,
+    messages,
+  });
 
     return result.toDataStreamResponse();
   } catch (error) {

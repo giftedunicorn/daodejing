@@ -1,16 +1,16 @@
 import { describe, expect, it } from "vitest";
 
 import { starterPrompts } from "../lib/chat/examples";
-import { startupXinfaSystemPrompt } from "../lib/prompts/startup-xinfa";
+import { founderCompassSystemPrompt } from "../lib/prompts/founder-compass";
 
-describe("startup xinfa prompt", () => {
+describe("founder compass prompt", () => {
   it("covers Daoist startup mentoring requirements", () => {
-    expect(startupXinfaSystemPrompt).toContain("《道德经》");
-    expect(startupXinfaSystemPrompt).toContain("AI 创业");
-    expect(startupXinfaSystemPrompt).toContain("MVP");
-    expect(startupXinfaSystemPrompt).toContain("PMF");
-    expect(startupXinfaSystemPrompt).toContain("流量");
-    expect(startupXinfaSystemPrompt).toContain("不要");
+    expect(founderCompassSystemPrompt).toContain("Dao De Jing");
+    expect(founderCompassSystemPrompt).toContain("AI startup");
+    expect(founderCompassSystemPrompt).toContain("MVP");
+    expect(founderCompassSystemPrompt).toContain("PMF");
+    expect(founderCompassSystemPrompt).toContain("traffic");
+    expect(founderCompassSystemPrompt).toContain("Avoid");
   });
 
   it("provides practical starter prompts", () => {

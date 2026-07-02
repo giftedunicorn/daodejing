@@ -3,8 +3,9 @@ import type { Metadata } from "next";
 import "./globals.css";
 
 export const metadata: Metadata = {
-  title: "创业心法顾问",
-  description: "用道德经、道家思想和 AI 创业实战解答创业困惑。",
+  title: "Dao De Jing For Founders",
+  description:
+    "A founder compass that uses the Dao De Jing and Taoist philosophy to help AI founders think through product, timing, leverage, and restraint.",
   icons: {
     icon: "/icon.svg",
   },
@@ -16,7 +17,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="zh-CN" suppressHydrationWarning>
+    <html lang="en" suppressHydrationWarning>
       <body>{children}</body>
     </html>
   );

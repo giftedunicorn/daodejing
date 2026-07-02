@@ -11,11 +11,13 @@ describe("ChatApp", () => {
     render(<ChatApp />);
 
     expect(
-      screen.getByRole("heading", { name: "创业心法顾问" }),
+      screen.getByRole("heading", { name: "Founder Compass" }),
     ).toBeInTheDocument();
-    expect(screen.getByPlaceholderText("说出你的创业困惑...")).toBeInTheDocument();
+    expect(screen.getByPlaceholderText("Ask a real founder problem...")).toBeInTheDocument();
     expect(
-      screen.getByText("我的 AI 产品一直没有 PMF，应该砍还是继续？"),
+      screen.getByText(
+        "My AI product still does not have PMF. Should I keep going, pivot, or kill it?",
+      ),
     ).toBeInTheDocument();
   });
 
@@ -28,12 +30,12 @@ describe("ChatApp", () => {
 
     fireEvent.click(
       screen.getByRole("button", {
-        name: "PMF 卡住 我的 AI 产品一直没有 PMF，应该砍还是继续？",
+        name: "PMF Stuck My AI product still does not have PMF. Should I keep going, pivot, or kill it?",
       }),
     );
 
     expect(onSelect).toHaveBeenCalledWith(
-      "我的 AI 产品一直没有 PMF，应该砍还是继续？",
+      "My AI product still does not have PMF. Should I keep going, pivot, or kill it?",
     );
   });
 });
